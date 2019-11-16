@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
 
     public void Hide()
     {
-        gameObject.SetActive(false
+        gameObject.SetActive(false);
     }
 
     public void OnRestartButtonClick()
