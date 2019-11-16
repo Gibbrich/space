@@ -12,10 +12,12 @@ public class AsteroidSpawner : MonoBehaviour
     public float Frequency = 3;
     public MoveDirection Direction;
     private float lastSpawnTime = 0;
+    private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -94,5 +96,9 @@ public class AsteroidSpawner : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            gameController.EndGame();
+        }
     }
 }
