@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public int Score = 0;
     public int FuelCollectCount = 0;
     private float lastLowEnergyWarnTime;
+    private AudioSource cameraAudioSource;
 
     [HideInInspector]
     public Fuel Fuel;
@@ -21,6 +22,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        cameraAudioSource = Camera.main.GetComponent<AudioSource>();
         StartGame();
     }
 
@@ -85,7 +87,7 @@ public class GameController : MonoBehaviour
     {
         if (value <= 0.2f && Time.time - lastLowEnergyWarnTime >= SoundsConfigure.LowEnergyWarnCoolDown)
         {
-            AudioSource.PlayClipAtPoint(SoundsConfigure.LowEnergy, Camera.main.transform.position);
+            PlayAudio(SoundsConfigure.LowEnergy);
             lastLowEnergyWarnTime = Time.time;
         }
         
@@ -94,5 +96,10 @@ public class GameController : MonoBehaviour
         {
             EndGame();
         }
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        cameraAudioSource.PlayOneShot(clip);
     }
 }
