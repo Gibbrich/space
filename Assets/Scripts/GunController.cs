@@ -6,6 +6,7 @@ public class GunController: MonoBehaviour
     public BulletController bulletPrefab;
     [Tooltip("Used for correct rotation of gun sprite, so it will point in correct location")]
     public float GunSpriteRotationAngle = 133;
+    public float BulletSpriteRotationAngle = 0;
     private GameController gameController;
     private PlayerController playerController;
     private Transform pivot;
@@ -30,7 +31,8 @@ public class GunController: MonoBehaviour
             {
                 var direction = mousePosition - (Vector2) transform.position;
 
-                var bullet = Instantiate(bulletPrefab, (Vector2) transform.position + direction.normalized, Quaternion.identity);
+                var bulletRotation = Quaternion.AngleAxis(angle + BulletSpriteRotationAngle, Vector3.forward);
+                var bullet = Instantiate(bulletPrefab, (Vector2) transform.position + direction.normalized, bulletRotation);
                 var bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.velocity = direction.normalized * bullet.BulletSpeed;
 
