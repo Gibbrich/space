@@ -55,6 +55,8 @@ public class GameController : MonoBehaviour
 
     public void StartGame(bool shouldRestart = false)
     {
+        Time.timeScale = 1;
+        
         if (shouldRestart)
         {
             SceneManager.LoadScene(0);
