@@ -454,6 +454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1381453814447508669, guid: 8f64ba72d4e9e430495390fbfa55f903,
+        type: 3}
+      propertyPath: FuelIndicatorRenderDistanceThreshold
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1381453814447508666, guid: 8f64ba72d4e9e430495390fbfa55f903,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: SpawnRadius
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: AsteroidSizeMax

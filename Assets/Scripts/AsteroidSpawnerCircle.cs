@@ -17,7 +17,7 @@ public class AsteroidSpawnerCircle : MonoBehaviour
     public float AsteroidSizeMin = 1;
     public float AsteroidSizeMax = 3;
     public float Frequency = 1.5f;
-    public float SpawnAtATime = 4;
+    public float SpawnAtATime = 5;
 
     private GameController gameController;
     private float lastSpawnTime = 0;
@@ -33,7 +33,7 @@ public class AsteroidSpawnerCircle : MonoBehaviour
         if (Time.timeSinceLevelLoad - lastSpawnTime >= Frequency)
         {
             var difficulty = Mathf.Clamp(Time.timeSinceLevelLoad / gameController.MaxDifficultyTime, 0, 1);
-            var spawnCount = Mathf.Clamp(SpawnAtATime * difficulty, 1, SpawnAtATime);
+            var spawnCount = Mathf.Clamp(SpawnAtATime * difficulty, 2, SpawnAtATime);
             
             for (int i = 0; i < spawnCount; i++)
             {
