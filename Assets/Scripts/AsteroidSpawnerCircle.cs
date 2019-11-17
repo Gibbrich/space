@@ -11,7 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class AsteroidSpawnerCircle : MonoBehaviour
 {
     public float SpawnRadius = 5;
-    public GameObject AsteroidPrefab;
+    public List<GameObject> AsteroidPrefabs;
     public float AsteroidSpeedMin = 1;
     public float AsteroidSpeedMax = 3;
     public float AsteroidSizeMin = 1;
@@ -43,8 +43,10 @@ public class AsteroidSpawnerCircle : MonoBehaviour
     {
         var angle = Random.Range(0, 360);
         var spawnPosition = GetSpawnPosition(angle);
-        
-        var asteroid = Instantiate(AsteroidPrefab, spawnPosition, Quaternion.identity);
+
+        var asteroidRotation = Random.Range(0, 360);
+        var id = Random.Range(0, AsteroidPrefabs.Count - 1);
+        var asteroid = Instantiate(AsteroidPrefabs[id], spawnPosition, Quaternion.AngleAxis(asteroidRotation, Vector3.forward));
         var size = Random.Range(AsteroidSizeMin, AsteroidSizeMax);
         asteroid.transform.localScale = Vector3.one * size;
         

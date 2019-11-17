@@ -4,6 +4,8 @@ using UnityEngine;
 public class GunController: MonoBehaviour
 {
     public BulletController bulletPrefab;
+    [Tooltip("Used for correct rotation of gun sprite, so it will point in correct location")]
+    public float GunSpriteRotationAngle = 133;
     private GameController gameController;
     private PlayerController playerController;
     private Transform pivot;
@@ -22,7 +24,7 @@ public class GunController: MonoBehaviour
             var mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var pivotPosition = mousePosition - (Vector2) pivot.transform.position;
             var angle = Mathf.Atan2(pivotPosition.y, pivotPosition.x) * Mathf.Rad2Deg;
-            pivot.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            pivot.transform.rotation = Quaternion.AngleAxis(angle + GunSpriteRotationAngle, Vector3.forward);
             
             if (Input.GetMouseButtonDown(0))
             {

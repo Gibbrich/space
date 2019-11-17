@@ -640,11 +640,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7217418826041459904, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
