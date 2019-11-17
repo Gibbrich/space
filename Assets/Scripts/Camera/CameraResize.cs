@@ -8,20 +8,19 @@ public class CameraResize : MonoBehaviour
     private float resize;
     private float speed;
 
-    public Rigidbody rb;
+    private Rigidbody playerRigidBody;
     public float maxResize = 10f;
 
     void Start()
     {
+        playerRigidBody = FindObjectOfType<PlayerController>().GetComponent<Rigidbody>();
         speed = 1f;
         size = Camera.main.orthographicSize;
     }
 
     void Update()
     {
-        Debug.Log(rb.velocity);
-
-        resize = size + 1f * Mathf.Abs(rb.velocity.x);
+        resize = size + 1f * Mathf.Abs(playerRigidBody.velocity.x);
         if (resize >= maxResize) resize = 8f;
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, resize, speed * Time.deltaTime);
     }

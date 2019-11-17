@@ -1,15 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player;
 
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
     private float posX;
     private float posY;
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerController>().transform;
+    }
 
     void FixedUpdate()
     {
