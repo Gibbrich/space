@@ -1,0 +1,17 @@
+{
+"companyName": "catagama games",
+"productName": "Fasteroid!",
+"productVersion": "0.1",
+"dataUrl": "build_7.data.unityweb",
+"wasmCodeUrl": "build_7.wasm.code.unityweb",
+"wasmFrameworkUrl": "build_7.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "build_7.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.12f1"
+}
