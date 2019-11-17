@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
+[RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     public BulletController bulletPrefab;
     public float MaxFuelValue = 100f;
     public float FuelConsumption = 1;
     
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private GameController gameController;
     private float currentFuelValue;
     
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
         currentFuelValue = MaxFuelValue;
     }
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                 var direction = target - (Vector2) transform.position;
 
                 var bullet = Instantiate(bulletPrefab, (Vector2) transform.position + direction.normalized, Quaternion.identity);
-                var bulletRB = bullet.GetComponent<Rigidbody>();
+                var bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.velocity = direction.normalized * bullet.BulletSpeed;
 
                 // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
         gameController.EndGame();

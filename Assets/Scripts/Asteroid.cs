@@ -14,7 +14,7 @@ public class Asteroid : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (!other.gameObject.CompareTag("Asteroid"))
         {
@@ -22,7 +22,7 @@ public class Asteroid : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {

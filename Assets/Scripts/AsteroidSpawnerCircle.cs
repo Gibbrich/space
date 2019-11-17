@@ -48,7 +48,7 @@ public class AsteroidSpawnerCircle : MonoBehaviour
         var size = Random.Range(AsteroidSizeMin, AsteroidSizeMax);
         asteroid.transform.localScale = Vector3.one * size;
         
-        var asteroidRb = asteroid.GetComponent<Rigidbody>();
+        var asteroidRb = asteroid.GetComponent<Rigidbody2D>();
 
         var asteroidSpeed = Random.Range(AsteroidSpeedMin, AsteroidSpeedMax);
         asteroidRb.velocity = GetAsteroidVelocity(angle) * asteroidSpeed;

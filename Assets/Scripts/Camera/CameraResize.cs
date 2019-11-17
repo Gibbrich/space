@@ -8,12 +8,12 @@ public class CameraResize : MonoBehaviour
     private float resize;
     private float speed;
 
-    private Rigidbody playerRigidBody;
+    private Rigidbody2D playerRigidBody;
     public float maxResize = 10f;
 
     void Start()
     {
-        playerRigidBody = FindObjectOfType<PlayerController>().GetComponent<Rigidbody>();
+        playerRigidBody = FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>();
         speed = 1f;
         size = Camera.main.orthographicSize;
     }
