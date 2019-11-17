@@ -1087,11 +1087,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5793768695194966753, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 4711645933166771008, guid: 43bc1c72694cd4a11bf35989d3a6f0f9,
-        type: 3}
+    - target: {fileID: 754786228, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_Name
+      value: Starfield
+      objectReference: {fileID: 0}
+    - target: {fileID: 754786232, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 754786232, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 754786232, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 754786232, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 754786232, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
