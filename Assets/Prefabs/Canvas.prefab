@@ -355,7 +355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 5770752739649187659}
-  GameOverText: {fileID: 0}
   ScoreTitle: {fileID: 1678083298481244525}
   FuelSlider: {fileID: 3099481358969758571}
   FuelIndicator: {fileID: 2295498490194398159}
@@ -761,7 +760,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1381453814447508669}
-        m_MethodName: OnRestartButtonClick
+        m_MethodName: OnExitButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

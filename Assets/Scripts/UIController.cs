@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public GameObject Menu;
-    public GameObject GameOverText;
     public Text ScoreTitle;
     public Slider FuelSlider;
     public FuelIndicator FuelIndicator;
@@ -28,9 +27,8 @@ public class UIController : MonoBehaviour
         FuelIndicator.gameObject.SetActive(IsFuelIndicatorVisible());
     }
 
-    public void ShowMenu(bool shouldShowEndGameLabel = false)
+    public void ShowMenu()
     {
-        GameOverText.SetActive(shouldShowEndGameLabel);
         Menu.gameObject.SetActive(true);
     }
 
@@ -41,8 +39,17 @@ public class UIController : MonoBehaviour
 
     public void OnRestartButtonClick()
     {
-        AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.MenuButtonClick, transform.position);
+        if (gameController.SoundsConfigure.MenuButtonClick)
+        {
+            AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.MenuButtonClick, transform.position);
+        }
+
         gameController.StartGame(true);
+    }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
     }
 
     public void UpdateScore(int score)
@@ -63,7 +70,7 @@ public class UIController : MonoBehaviour
         {
             return false;
         }
-        
+
         var distanceToFuel = (playerController.transform.position - fuel.transform.position).magnitude;
 
         return distanceToFuel > FuelIndicatorRenderDistanceThreshold;
