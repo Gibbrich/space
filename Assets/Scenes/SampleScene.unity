@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 304192836}
+    - target: {fileID: 4448642801945873832, guid: d44692411f42b4bab89727d516e417ec,
+        type: 3}
+      propertyPath: MaxDifficultyTime
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 4448642801853096158, guid: d44692411f42b4bab89727d516e417ec,
         type: 3}
       propertyPath: m_PlayOnAwake
@@ -581,12 +586,12 @@ PrefabInstance:
     - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
       propertyPath: SpawnRadiusMin
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
       propertyPath: SpawnRadiusMax
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5793768695194966764, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
@@ -648,6 +653,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5793768695194966753, guid: edd5a26f3f60647fc8ba5216d32ad335,
+        type: 3}
+      propertyPath: FuelConsumption
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -655,6 +665,14 @@ PrefabInstance:
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: SpawnAtATime
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: SpawnRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: AsteroidSizeMax
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3168664694480385398, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
