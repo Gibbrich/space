@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 304192836}
+    - target: {fileID: 4448642801853096158, guid: d44692411f42b4bab89727d516e417ec,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d44692411f42b4bab89727d516e417ec, type: 3}
 --- !u!1001 &5072249572748195997
@@ -631,6 +636,11 @@ PrefabInstance:
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168664694480385398, guid: edd5a26f3f60647fc8ba5216d32ad335,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}

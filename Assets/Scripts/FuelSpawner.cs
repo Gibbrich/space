@@ -20,7 +20,7 @@ public class FuelSpawner: MonoBehaviour
 
     void Update()
     {
-        if (Time.time - lastSpawnTime >= SpawnFrequency)
+        if (Time.timeSinceLevelLoad - lastSpawnTime >= SpawnFrequency)
         {
             Spawn();
             lastSpawnTime = Time.time;

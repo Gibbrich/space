@@ -20,8 +20,14 @@ public class CameraResize : MonoBehaviour
 
     void Update()
     {
-        resize = size + 1f * Mathf.Abs(playerRigidBody.velocity.x);
-        if (resize >= maxResize) resize = 8f;
-        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, resize, speed * Time.deltaTime);
+        if (playerRigidBody)
+        {
+            resize = size + 1f * Mathf.Abs(playerRigidBody.velocity.x);
+            if (resize >= maxResize)
+            {
+                resize = 8f;
+            }
+            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, resize, speed * Time.deltaTime);
+        }
     }
 }

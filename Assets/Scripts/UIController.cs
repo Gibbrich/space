@@ -64,6 +64,11 @@ public class UIController : MonoBehaviour
 
     private bool IsFuelIndicatorVisible()
     {
+        if (gameController.GameState != GameState.Play)
+        {
+            return false;
+        }
+        
         var fuel = gameController.Fuel;
 
         if (!fuel)
