@@ -8,7 +8,9 @@ using UnityEngine.Serialization;
 public class GameController : MonoBehaviour
 {
     public UIController uiController;
+    public SoundsConfigure SoundsConfigure;
     private int Score = 0;
+    private float lastLowEnergyWarnTime;
 
     [HideInInspector]
     public Fuel Fuel;
@@ -72,6 +74,12 @@ public class GameController : MonoBehaviour
 
     public void UpdateFuel(float value)
     {
+        if (value <= 0.2f && Time.time - lastLowEnergyWarnTime >= SoundsConfigure.LowEnergyWarnCoolDown)
+        {
+            AudioSource.PlayClipAtPoint(SoundsConfigure.LowEnergy, Camera.main.transform.position);
+            lastLowEnergyWarnTime = Time.time;
+        }
+        
         uiController.UpdateFuelValue(value);
         if (Math.Abs(value) < 0.001)
         {

@@ -29,16 +29,19 @@ public class GunController: MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                var direction = mousePosition - (Vector2) transform.position;
+                var transformPosition = transform.position;
+                var direction = mousePosition - (Vector2) transformPosition;
 
                 var bulletRotation = Quaternion.AngleAxis(angle + BulletSpriteRotationAngle, Vector3.forward);
-                var bullet = Instantiate(bulletPrefab, (Vector2) transform.position + direction.normalized, bulletRotation);
+                var bullet = Instantiate(bulletPrefab, (Vector2) transformPosition + direction.normalized, bulletRotation);
                 var bulletRB = bullet.GetComponent<Rigidbody2D>();
                 bulletRB.velocity = direction.normalized * bullet.BulletSpeed;
 
                 // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
                 // цели. т.е. если игрок захочет получше прицелиться, у него будет увеличенная отдача
                 playerController.UpdateVelocity(direction * -1);
+                
+                AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.Shot, transformPosition);
             }
         }
     }

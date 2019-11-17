@@ -27,6 +27,7 @@ public class Asteroid : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             gameController.UpdateScore(Score);
+            AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.AsteroidExplosion, transform.position);
         }
     }
 }

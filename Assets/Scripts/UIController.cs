@@ -41,6 +41,7 @@ public class UIController : MonoBehaviour
 
     public void OnRestartButtonClick()
     {
+        AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.MenuButtonClick, transform.position);
         gameController.StartGame(true);
     }
 

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     
     private Rigidbody2D rb;
     private GameController gameController;
+    private AudioSource audioSource;
     private float currentFuelValue;
     
     // Start is called before the first frame update
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
         currentFuelValue = MaxFuelValue;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = gameController.SoundsConfigure.Ship;
     }
 
     // Update is called once per frame
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
+
+        AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.ShipExplosion, transform.position);        
         gameController.EndGame();
     }
 }
