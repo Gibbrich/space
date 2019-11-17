@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public GameObject Menu;
+    public GameObject ScorePanel;
     public Text ScoreTitle;
+    public Text ScoreMenuTitle;
+    public Text FuelMenuTitle;
     public Slider FuelSlider;
     public FuelIndicator FuelIndicator;
     public float FuelIndicatorRenderDistanceThreshold = 10;
@@ -29,11 +32,17 @@ public class UIController : MonoBehaviour
 
     public void ShowMenu()
     {
+        FuelSlider.gameObject.SetActive(false);
+        ScorePanel.gameObject.SetActive(false);
+        ScoreMenuTitle.text = gameController.Score.ToString();
+        FuelMenuTitle.text = gameController.FuelCollectCount.ToString();
         Menu.gameObject.SetActive(true);
     }
 
     public void HideMenu()
     {
+        FuelSlider.gameObject.SetActive(true);
+        ScorePanel.gameObject.SetActive(true);
         Menu.gameObject.SetActive(false);
     }
 

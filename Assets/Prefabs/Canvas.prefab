@@ -355,7 +355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Menu: {fileID: 5770752739649187659}
+  ScorePanel: {fileID: 4196488156585107611}
   ScoreTitle: {fileID: 1678083298481244525}
+  ScoreMenuTitle: {fileID: 9170085205949180128}
+  FuelMenuTitle: {fileID: 4568011244144561110}
   FuelSlider: {fileID: 3099481358969758571}
   FuelIndicator: {fileID: 2295498490194398159}
   FuelIndicatorRenderDistanceThreshold: 10

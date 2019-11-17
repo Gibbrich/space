@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour
 {
     public UIController uiController;
     public SoundsConfigure SoundsConfigure;
-    private int Score = 0;
+    public int Score = 0;
+    public int FuelCollectCount = 0;
     private float lastLowEnergyWarnTime;
 
     [HideInInspector]
@@ -72,6 +73,11 @@ public class GameController : MonoBehaviour
     {
         Score += score;
         uiController.UpdateScore(Score);
+    }
+
+    public void UpdateFuelCollectCount()
+    {
+        FuelCollectCount++;
     }
 
     public void UpdateFuel(float value)
