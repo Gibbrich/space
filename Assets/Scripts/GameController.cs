@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
         
         if (shouldRestart)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {
