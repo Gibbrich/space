@@ -6,7 +6,6 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
     private float posX;
