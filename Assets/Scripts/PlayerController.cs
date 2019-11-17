@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
         currentFuelValue = MaxFuelValue;
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = gameController.SoundsConfigure.Ship;
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(gameObject);
 
-        AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.ShipExplosion, transform.position);        
+        gameController.PlayAudio(gameController.SoundsConfigure.ShipExplosion);
         gameController.EndGame();
     }
 }
