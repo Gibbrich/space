@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         GameState = GameState.Stop;
-        uiController.ShowMenu(true);
+        uiController.ShowMenu();
     }
 
     public void StartGame(bool shouldRestart = false)
