@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d581253c7c4267b9fe23a21b2619a7, type: 3}
   m_Name: Sounds
   m_EditorClassIdentifier: 
-  Ship: {fileID: 0}
-  Shot: {fileID: 0}
-  AsteroidExplosion: {fileID: 0}
-  LowEnergy: {fileID: 0}
-  BatteryPickUp: {fileID: 0}
-  ShipExplosion: {fileID: 0}
-  MenuButtonClick: {fileID: 0}
+  Ship: {fileID: 8300000, guid: 48ce3fad71b943141b00ac2d15f6605e, type: 3}
+  Shot: {fileID: 8300000, guid: 2b966f81c29eab44994520694ef871b3, type: 3}
+  AsteroidExplosion: {fileID: 8300000, guid: 6f87cf9303f6b894f9bee2de82c32aad, type: 3}
+  LowEnergy: {fileID: 8300000, guid: 644515e8dbe2ba54f89bc6371d8956d6, type: 3}
+  BatteryPickUp: {fileID: 8300000, guid: ae97e174523fe4644a40c330a79545a1, type: 3}
+  ShipExplosion: {fileID: 8300000, guid: 32aabd402d224d14e84cacd711f4852d, type: 3}
+  MenuButtonClick: {fileID: 8300000, guid: 2dff3ec6435a99e4c8a3f858683d803a, type: 3}
   LowEnergyWarnCoolDown: 10
