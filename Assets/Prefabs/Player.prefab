@@ -84,7 +84,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4711645933166771008, guid: 43bc1c72694cd4a11bf35989d3a6f0f9,
     type: 3}
   MaxFuelValue: 100
-  FuelConsumption: 1
+  FuelConsumption: 4
 --- !u!114 &1018392373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,12 +92,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5793768695194966764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d0a4a647f6e649228c467490c28fb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnRadius: 9
+  SpawnRadius: 20
   AsteroidPrefabs:
   - {fileID: 1977021088478002555, guid: 9a314ff30dd854f8b9174f160e87fb94, type: 3}
   - {fileID: 1977021088478002555, guid: 3d62ba93c79a34389a1d17da45688ac3, type: 3}
@@ -109,7 +109,7 @@ MonoBehaviour:
   AsteroidSizeMin: 1
   AsteroidSizeMax: 1
   Frequency: 1.5
-  SpawnAtATime: 4
+  SpawnAtATime: 6
 --- !u!114 &5023964435910661000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,11 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c5c268654342bdb9a132137f39179d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnRadiusMin: 10
-  SpawnRadiusMax: 15
+  SpawnRadiusMin: 30
+  SpawnRadiusMax: 45
   FuelPrefab: {fileID: 5013296835944162597, guid: 2c91ede43d2d34d099aec6f9ef6608fd,
     type: 3}
-  SpawnFrequency: 9
+  SpawnFrequency: 10
 --- !u!50 &4632645979837507036
 Rigidbody2D:
   serializedVersion: 4
