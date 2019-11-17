@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5013296835944162597}
   - component: {fileID: 5320224831425047976}
   - component: {fileID: 7679898877688417311}
+  - component: {fileID: 7082112555375510587}
   m_Layer: 0
   m_Name: Fuel
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: 100
   Lifetime: 10
+  StartAnimationThreshold: 0.3
 --- !u!50 &5320224831425047976
 Rigidbody2D:
   serializedVersion: 4
@@ -85,6 +87,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 0.8}
   m_Direction: 1
+--- !u!95 &7082112555375510587
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5013296835944162598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea1cb436dcf77e344b1b31031974fc49, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6075429053661846614
 GameObject:
   m_ObjectHideFlags: 0
