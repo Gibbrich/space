@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class GameController : MonoBehaviour
 {
     public UIController uiController;
+    private int Score = 0;
 
     [HideInInspector] public GameState GameState = GameState.Play;
 
@@ -31,20 +32,20 @@ public class GameController : MonoBehaviour
         {
             GameState = GameState.Pause;
             Time.timeScale = 0;
-            uiController.Show();
+            uiController.ShowMenu();
         }
         else
         {
             GameState = GameState.Play;
             Time.timeScale = 1;
-            uiController.Hide();
+            uiController.HideMenu();
         }
     }
 
     public void EndGame()
     {
         GameState = GameState.Stop;
-        uiController.Show(true);
+        uiController.ShowMenu(true);
     }
 
     public void StartGame(bool shouldRestart = false)
@@ -56,7 +57,13 @@ public class GameController : MonoBehaviour
         else
         {
             GameState = GameState.Play;
-            uiController.Hide();
+            uiController.HideMenu();
         }
+    }
+
+    public void UpdateScore(int score)
+    {
+        Score += score;
+        uiController.UpdateScore(Score);
     }
 }
