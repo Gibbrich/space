@@ -10,11 +10,9 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Respawn"))
+        if (other.gameObject.CompareTag("Asteroid"))
         {
             Destroy(other.gameObject);
         }
-        
-        Destroy(gameObject);
     }
 }

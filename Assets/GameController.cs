@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour
     public UIController uiController;
     private int Score = 0;
 
+    [HideInInspector]
+    public Fuel Fuel;
+
     [HideInInspector] public GameState GameState = GameState.Play;
 
     private void Start()
@@ -65,5 +68,14 @@ public class GameController : MonoBehaviour
     {
         Score += score;
         uiController.UpdateScore(Score);
+    }
+
+    public void UpdateFuel(float value)
+    {
+        uiController.UpdateFuelValue(value);
+        if (Math.Abs(value) < 0.001)
+        {
+            EndGame();
+        }
     }
 }
