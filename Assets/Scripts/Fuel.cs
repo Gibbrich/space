@@ -18,14 +18,15 @@ public class Fuel: MonoBehaviour
     {
         gameController = FindObjectOfType<GameController>();
         createTime = Time.time;
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
-        if (Time.time - createTime >= Lifetime * (1 - StartAnimationThreshold) && !isAnimationStarted)
+        if (!isAnimationStarted &&Time.time - createTime >= Lifetime * (1 - StartAnimationThreshold))
         {
             animator.SetTrigger("Start");
+            isAnimationStarted = true;
         }
         
         if (Time.time - createTime >= Lifetime)
