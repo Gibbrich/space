@@ -27,30 +27,20 @@ public class PlayerController : MonoBehaviour
     {
         if (gameController.GameState == GameState.Play)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                var target = (Vector2) Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-
-                var direction = target - (Vector2) transform.position;
-
-                var bullet = Instantiate(bulletPrefab, (Vector2) transform.position + direction.normalized, Quaternion.identity);
-                var bulletRB = bullet.GetComponent<Rigidbody2D>();
-                bulletRB.velocity = direction.normalized * bullet.BulletSpeed;
-
-                // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
-                // цели. т.е. если игрок захочет получше прицелиться, у него будет увеличенная отдача
-                rb.velocity = direction * -1;
-            }
+            currentFuelValue -= Time.deltaTime * FuelConsumption;
+            NotifyGameControllerFuelChanged();
         }
-
-        currentFuelValue -= Time.deltaTime * FuelConsumption;
-        NotifyGameControllerFuelChanged();
     }
 
     public void RechargeFuel(float amount)
     {
         currentFuelValue = Mathf.Clamp(currentFuelValue + amount, 0, MaxFuelValue);
         NotifyGameControllerFuelChanged();
+    }
+
+    public void UpdateVelocity(Vector2 velocity)
+    {
+        rb.velocity = velocity;
     }
 
     private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
