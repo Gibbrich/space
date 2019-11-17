@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 {
     public UIController uiController;
     public SoundsConfigure SoundsConfigure;
-    public float MaxDifficultyTime = 45f;
+    public float MaxDifficultyTime = 35f;
     public int Score = 0;
     public int FuelCollectCount = 0;
     private float lastLowEnergyWarnTime;

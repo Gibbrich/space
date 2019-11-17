@@ -578,6 +578,16 @@ PrefabInstance:
       propertyPath: SpawnFrequency
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
+        type: 3}
+      propertyPath: SpawnRadiusMin
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
+        type: 3}
+      propertyPath: SpawnRadiusMax
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5793768695194966764, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
       propertyPath: m_Name
@@ -641,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: SpawnAtATime
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3168664694480385398, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
