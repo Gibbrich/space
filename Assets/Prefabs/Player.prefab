@@ -109,7 +109,7 @@ MonoBehaviour:
   AsteroidSizeMin: 1
   AsteroidSizeMax: 1
   Frequency: 1.5
-  SpawnAtATime: 6
+  SpawnAtATime: 4
 --- !u!114 &5023964435910661000
 MonoBehaviour:
   m_ObjectHideFlags: 0
