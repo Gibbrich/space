@@ -7,20 +7,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public BulletController bulletPrefab;
-    public float MaxFuelValue = 100f;
-    public float FuelConsumption = 1;
+//    public float MaxFuelValue = 100f;
+//    public float FuelConsumption = 1;
     
     private Rigidbody2D rb;
     private GameController gameController;
     private AudioSource audioSource;
-    private float currentFuelValue;
+//    private float currentFuelValue;
     
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
-        currentFuelValue = MaxFuelValue;
+//        currentFuelValue = MaxFuelValue;
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = gameController.SoundsConfigure.Ship;
         audioSource.Play();
@@ -29,17 +29,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameController.GameState == GameState.Play)
-        {
-            currentFuelValue -= Time.deltaTime * FuelConsumption;
-            NotifyGameControllerFuelChanged();
-        }
+//        if (gameController.GameState == GameState.Play)
+//        {
+//            currentFuelValue -= Time.deltaTime * FuelConsumption;
+//            NotifyGameControllerFuelChanged();
+//        }
     }
 
     public void RechargeFuel(float amount)
     {
-        currentFuelValue = Mathf.Clamp(currentFuelValue + amount, 0, MaxFuelValue);
-        NotifyGameControllerFuelChanged();
+//        currentFuelValue = Mathf.Clamp(currentFuelValue + amount, 0, MaxFuelValue);
+//        NotifyGameControllerFuelChanged();
     }
 
     public void UpdateVelocity(Vector2 velocity)
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
+//    private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
 
     private void OnCollisionEnter2D(Collision2D other)
     {

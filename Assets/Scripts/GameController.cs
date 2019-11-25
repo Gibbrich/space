@@ -11,12 +11,8 @@ public class GameController : MonoBehaviour
     public SoundsConfigure SoundsConfigure;
     public float MaxDifficultyTime = 35f;
     public int Score = 0;
-    public int FuelCollectCount = 0;
     private float lastLowEnergyWarnTime;
     private AudioSource cameraAudioSource;
-
-    [HideInInspector]
-    public Fuel Fuel;
 
     [HideInInspector] public GameState GameState = GameState.Play;
 
@@ -76,26 +72,6 @@ public class GameController : MonoBehaviour
     {
         Score += score;
         uiController.UpdateScore(Score);
-    }
-
-    public void UpdateFuelCollectCount()
-    {
-        FuelCollectCount++;
-    }
-
-    public void UpdateFuel(float value)
-    {
-        if (value <= 0.2f && Time.time - lastLowEnergyWarnTime >= SoundsConfigure.LowEnergyWarnCoolDown)
-        {
-            PlayAudio(SoundsConfigure.LowEnergy);
-            lastLowEnergyWarnTime = Time.time;
-        }
-        
-        uiController.UpdateFuelValue(value);
-        if (Math.Abs(value) < 0.001)
-        {
-            EndGame();
-        }
     }
 
     public void PlayAudio(AudioClip clip)

@@ -685,6 +685,11 @@ PrefabInstance:
       propertyPath: SpawnRadiusMax
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5793768695194966752, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
       propertyPath: m_LocalPosition.x

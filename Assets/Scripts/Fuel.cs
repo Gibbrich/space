@@ -39,7 +39,7 @@ public class Fuel: MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerController>().RechargeFuel(Value);
-            gameController.UpdateFuelCollectCount();
+//            gameController.UpdateFuelCollectCount();
             AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.BatteryPickUp, transform.position);
             Destroy(gameObject);
         }
