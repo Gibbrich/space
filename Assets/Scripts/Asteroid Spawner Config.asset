@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ff8da8058340e3b3dd715077be0083, type: 3}
+  m_Name: Asteroid Spawner Config
+  m_EditorClassIdentifier: 
+  AsteroidPrefabs:
+  - {fileID: 1977021088478002555, guid: 9a314ff30dd854f8b9174f160e87fb94, type: 3}
+  - {fileID: 1977021088478002555, guid: 3d62ba93c79a34389a1d17da45688ac3, type: 3}
+  - {fileID: 1977021088478002555, guid: 0b1b37b0092bd451aae4a272f8fcf553, type: 3}
+  - {fileID: 1977021088478002555, guid: 8a2c380de4ef1493993060fcf3dd26e0, type: 3}
+  - {fileID: 1977021088478002555, guid: 01e582c7592d343629ee1d533dbeed11, type: 3}
+  AsteroidSpeedMin: 1
+  AsteroidSpeedMax: 3
+  AsteroidSizeMin: 1
+  AsteroidSizeMax: 2
+  Frequency: 1.5
+  SpawnAtATime: 4
