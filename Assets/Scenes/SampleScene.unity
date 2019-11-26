@@ -536,11 +536,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1381453814447508669, guid: 8f64ba72d4e9e430495390fbfa55f903,
-        type: 3}
-      propertyPath: FuelIndicatorRenderDistanceThreshold
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 1381453814447508666, guid: 8f64ba72d4e9e430495390fbfa55f903,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -644,16 +639,6 @@ PrefabInstance:
     - target: {fileID: 1381453814447508666, guid: 8f64ba72d4e9e430495390fbfa55f903,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7294054931135741978, guid: 8f64ba72d4e9e430495390fbfa55f903,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7294054931135741978, guid: 8f64ba72d4e9e430495390fbfa55f903,
-        type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -776,5 +761,6 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
