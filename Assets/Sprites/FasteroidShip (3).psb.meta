@@ -28,7 +28,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -134,7 +134,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 31, y: 21, z: 28, w: 23}
     rect:
       serializedVersion: 2
       x: 4
@@ -156,10 +156,10 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 26, y: 23, z: 27, w: 23}
     rect:
       serializedVersion: 2
-      x: 489
+      x: 490
       y: 916
       width: 272
       height: 124
@@ -178,7 +178,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 29, y: 28, z: 26, w: 30}
     rect:
       serializedVersion: 2
       x: 489
