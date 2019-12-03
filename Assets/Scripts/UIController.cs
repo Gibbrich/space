@@ -9,7 +9,6 @@ public class UIController : MonoBehaviour
     public GameObject Menu;
     public GameObject ScorePanel;
     public GameObject MenuButton;
-    public GameObject RestartButton;
     public Text ScoreTitle;
     public Text ScoreMenuTitle;
     public float FuelIndicatorRenderDistanceThreshold = 10;
@@ -26,7 +25,6 @@ public class UIController : MonoBehaviour
 
     public void ShowMenu()
     {
-        RestartButton.gameObject.SetActive(false);
         MenuButton.gameObject.SetActive(false);
         ScorePanel.gameObject.SetActive(false);
         ScoreMenuTitle.text = gameController.Score.ToString();
@@ -35,7 +33,6 @@ public class UIController : MonoBehaviour
 
     public void HideMenu()
     {
-        RestartButton.gameObject.SetActive(true);
         MenuButton.gameObject.SetActive(true);
         ScorePanel.gameObject.SetActive(true);
         Menu.gameObject.SetActive(false);
