@@ -23,7 +23,7 @@ public class AsteroidSpawnerSquare: MonoBehaviour
     
     void Update()
     {
-        if (Time.timeSinceLevelLoad - lastSpawnTime >= Config.Frequency)
+        if (Time.timeSinceLevelLoad - lastSpawnTime >= Config.Frequency && gameController.GameState != GameState.Stop)
         {
             for (var i = 0; i < Config.SpawnAtATime; i++)
             {
