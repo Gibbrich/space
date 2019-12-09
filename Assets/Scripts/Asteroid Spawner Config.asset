@@ -23,4 +23,4 @@ MonoBehaviour:
   AsteroidSizeMin: 1
   AsteroidSizeMax: 2
   Frequency: 1.5
-  SpawnAtATime: 6
+  SpawnAtATime: 4
