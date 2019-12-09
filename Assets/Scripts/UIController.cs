@@ -6,9 +6,13 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public static readonly string CONTINUE_TITLE = "Continue";
+    public static readonly string RESTART_TITLE = "Restart";
+    
     public GameObject Menu;
     public GameObject ScorePanel;
     public GameObject MenuButton;
+    public Text MenuRightButtonTitle;
     public Text ScoreTitle;
     public Text ScoreMenuTitle;
     public float FuelIndicatorRenderDistanceThreshold = 10;
@@ -23,8 +27,9 @@ public class UIController : MonoBehaviour
         UpdateScore(0);
     }
 
-    public void ShowMenu()
+    public void ShowMenu(bool isEndGame = false)
     {
+        MenuRightButtonTitle.text = isEndGame ? RESTART_TITLE : CONTINUE_TITLE;
         MenuButton.gameObject.SetActive(false);
         ScorePanel.gameObject.SetActive(false);
         ScoreMenuTitle.text = gameController.Score.ToString();
@@ -38,7 +43,19 @@ public class UIController : MonoBehaviour
         Menu.gameObject.SetActive(false);
     }
 
-    public void OnRestartButtonClick()
+    public void OnMenuRightButtonClick()
+    {
+        if (gameController.GameState == GameState.Stop)
+        {
+            RestartGame();
+        }
+        else
+        {
+            ContinueGame();
+        }
+    }
+
+    private void RestartGame()
     {
         if (gameController.SoundsConfigure.MenuButtonClick)
         {
@@ -47,6 +64,8 @@ public class UIController : MonoBehaviour
 
         gameController.StartGame(true);
     }
+
+    public void OnRestartButtonClick() => RestartGame();
 
     public void OnExitButtonClick()
     {
@@ -58,10 +77,9 @@ public class UIController : MonoBehaviour
         gameController.TogglePause();
     }
 
-    public void OnContinueButtonClick()
-    {
-        gameController.TogglePause();
-    }
+    public void OnContinueButtonClick() => ContinueGame();
+
+    private void ContinueGame() => gameController.TogglePause();
 
     public void UpdateScore(int score)
     {

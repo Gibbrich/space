@@ -194,6 +194,7 @@ MonoBehaviour:
   Menu: {fileID: 5043471013148881302}
   ScorePanel: {fileID: 4196488156585107611}
   MenuButton: {fileID: 8955297019964567069}
+  MenuRightButtonTitle: {fileID: 1381453815005756137}
   ScoreTitle: {fileID: 1678083298481244525}
   ScoreMenuTitle: {fileID: 9170085205949180128}
   FuelIndicatorRenderDistanceThreshold: 10
@@ -210,7 +211,7 @@ GameObject:
   - component: {fileID: 1381453814477241113}
   - component: {fileID: 1381453814477241126}
   m_Layer: 5
-  m_Name: Try again
+  m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,7 +318,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1381453814447508669}
-        m_MethodName: OnContinueButtonClick
+        m_MethodName: OnMenuRightButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
