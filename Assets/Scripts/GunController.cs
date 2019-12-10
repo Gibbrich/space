@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -28,7 +29,7 @@ public class GunController: MonoBehaviour
             var angle = Mathf.Atan2(pivotPosition.y, pivotPosition.x) * Mathf.Rad2Deg;
             pivot.transform.rotation = Quaternion.AngleAxis(angle + GunSpriteRotationAngle, Vector3.forward);
             
-            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(GetPointerId()))
             {
                 var transformPosition = transform.position;
                 var direction = mousePosition - (Vector2) transformPosition;
@@ -44,6 +45,25 @@ public class GunController: MonoBehaviour
                 
                 AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.Shot, transformPosition);
             }
+        }
+    }
+
+    private int GetPointerId()
+    {
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            if (Input.touchCount > 0 && Input.GetTouch (0).phase == TouchPhase.Began)
+            {
+                return Input.GetTouch(0).fingerId;
+            }
+            else
+            {
+                return PointerInputModule.kMouseLeftId;
+            }
+        }
+        else
+        {
+            return PointerInputModule.kMouseLeftId;
         }
     }
 }
