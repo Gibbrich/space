@@ -569,10 +569,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8884931176324554396, guid: 8f64ba72d4e9e430495390fbfa55f903,
+    - target: {fileID: 946742119620550075, guid: 8f64ba72d4e9e430495390fbfa55f903,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 35.60498
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f64ba72d4e9e430495390fbfa55f903, type: 3}
@@ -642,6 +642,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773291195309023713, guid: 9cc3b5c9784b348b9ae57b9bafbaaa30,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773291195309023713, guid: 9cc3b5c9784b348b9ae57b9bafbaaa30,
+        type: 3}
+      propertyPath: ShouldSpawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc3b5c9784b348b9ae57b9bafbaaa30, type: 3}

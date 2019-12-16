@@ -9,6 +9,7 @@ public class AsteroidSpawnerSquare: MonoBehaviour
 {
     public AsteroidSpawnerConfig Config;
     public float AdditionalHeight = 1;
+    public bool ShouldSpawn = true;
     
     private GameController gameController;
     private BoxCollider2D spawnCollider;
@@ -23,7 +24,7 @@ public class AsteroidSpawnerSquare: MonoBehaviour
     
     void Update()
     {
-        if (Time.timeSinceLevelLoad - lastSpawnTime >= Config.Frequency && gameController.GameState != GameState.Stop)
+        if (Time.timeSinceLevelLoad - lastSpawnTime >= Config.Frequency && gameController.GameState != GameState.Stop && ShouldSpawn)
         {
             for (var i = 0; i < Config.SpawnAtATime; i++)
             {

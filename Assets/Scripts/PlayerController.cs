@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private GameController gameController;
     private AudioSource audioSource;
+
+    private GunController gunController;
 //    private float currentFuelValue;
     
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
+        gunController = GetComponentInChildren<GunController>();
 //        currentFuelValue = MaxFuelValue;
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = gameController.SoundsConfigure.Ship;
@@ -46,6 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = velocity;
     }
+
+    public void Fire() => gunController.Fire();
 
 //    private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
 
