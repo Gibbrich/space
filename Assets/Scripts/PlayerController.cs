@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
 
+    public Vector2 GetVelocity() => rb.velocity;
+
     public void Fire() => gunController.Fire();
 
 //    private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);

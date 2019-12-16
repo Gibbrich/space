@@ -11,7 +11,7 @@ public class GunController : MonoBehaviour
 
     [Tooltip("Used for correct rotation of gun sprite, so it will point in correct location")]
     public float GunSpriteRotationAngle = 133;
-
+    public float MaxRecoil = 5;
     public float BulletSpriteRotationAngle = 0;
     private GameController gameController;
     private UIController uiController;
@@ -70,7 +70,14 @@ public class GunController : MonoBehaviour
 
         // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
         // цели. т.е. если игрок захочет получше прицелиться, у него будет увеличенная отдача
-        playerController.UpdateVelocity(joysticDirection.normalized * -1);
+
+        var velocity = playerController.GetVelocity() + joysticDirection.normalized * -1;
+        if (velocity.magnitude >= MaxRecoil)
+        {
+            velocity = velocity.normalized * MaxRecoil;
+        }
+
+        playerController.UpdateVelocity(velocity);
 #else
         var mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var pivotPosition = mousePosition - (Vector2) pivot.transform.position;
