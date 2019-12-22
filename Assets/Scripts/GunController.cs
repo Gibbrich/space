@@ -7,14 +7,11 @@ using UnityEngine.EventSystems;
 public class GunController : MonoBehaviour
 {
     public BulletController bulletPrefab;
-    public Transform Barrel;
 
     [Tooltip("Used for correct rotation of gun sprite, so it will point in correct location")]
     public float GunSpriteRotationAngle = 133;
-    public float MaxRecoil = 5;
     public float BulletSpriteRotationAngle = 0;
     private GameController gameController;
-    private UIController uiController;
     private PlayerController playerController;
     private Transform pivot;
 
@@ -22,7 +19,6 @@ public class GunController : MonoBehaviour
     {
         gameController = FindObjectOfType<GameController>();
         playerController = GetComponentInParent<PlayerController>();
-        uiController = FindObjectOfType<UIController>();
         pivot = transform.parent;
     }
 
@@ -30,28 +26,15 @@ public class GunController : MonoBehaviour
     {
         if (gameController.GameState == GameState.Play)
         {
-#if UNITY_ANDROID || UNITY_IOS
-            var joysticDirection = uiController.GetJoysticDirection();
-            var angle = Mathf.Atan2(joysticDirection.y, joysticDirection.x) * Mathf.Rad2Deg;
-#else
             var mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var pivotPosition = mousePosition - (Vector2) pivot.transform.position;
             var angle = Mathf.Atan2(pivotPosition.y, pivotPosition.x) * Mathf.Rad2Deg;
-#endif
             pivot.transform.rotation = Quaternion.AngleAxis(angle + GunSpriteRotationAngle, Vector3.forward);
 
-#if UNITY_ANDROID || UNITY_IOS
-            // used for convenient debugging in Editor 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Fire();
-            }
-#else
             if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(GetPointerId()))
             {  
-              Fire();
+                Fire();
             }
-#endif
         }
     }
 
@@ -59,26 +42,6 @@ public class GunController : MonoBehaviour
     {
         var transformPosition = transform.position;
 
-#if UNITY_ANDROID || UNITY_IOS
-        var joysticDirection = uiController.GetJoysticDirection();
-        var angle = Mathf.Atan2(joysticDirection.y, joysticDirection.x) * Mathf.Rad2Deg;
-
-        var bulletRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        var bullet = Instantiate(bulletPrefab, (Vector2) Barrel.position, bulletRotation);
-        var bulletRB = bullet.GetComponent<Rigidbody2D>();
-        bulletRB.velocity = joysticDirection.normalized * bullet.BulletSpeed;
-
-        // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
-        // цели. т.е. если игрок захочет получше прицелиться, у него будет увеличенная отдача
-
-        var velocity = playerController.GetVelocity() + joysticDirection.normalized * -1;
-        if (velocity.magnitude >= MaxRecoil)
-        {
-            velocity = velocity.normalized * MaxRecoil;
-        }
-
-        playerController.UpdateVelocity(velocity);
-#else
         var mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var pivotPosition = mousePosition - (Vector2) pivot.transform.position;
         var angle = Mathf.Atan2(pivotPosition.y, pivotPosition.x) * Mathf.Rad2Deg;
@@ -93,7 +56,6 @@ public class GunController : MonoBehaviour
         // todo - если не нормализовать вектор, получается ускорение зависит от расстояния
         // цели. т.е. если игрок захочет получше прицелиться, у него будет увеличенная отдача
         playerController.UpdateVelocity(direction * -1);
-#endif
 
 
         AudioSource.PlayClipAtPoint(gameController.SoundsConfigure.Shot, transformPosition);

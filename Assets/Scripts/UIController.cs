@@ -15,7 +15,6 @@ public class UIController : MonoBehaviour
     public Text MenuRightButtonTitle;
     public Text ScoreTitle;
     public Text ScoreMenuTitle;
-    public Joystick Joystick;
     public float FuelIndicatorRenderDistanceThreshold = 10;
 
     private GameController gameController;
@@ -56,8 +55,6 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public Vector2 GetJoysticDirection() => Joystick.Direction;
-
     private void RestartGame()
     {
         if (gameController.SoundsConfigure.MenuButtonClick)
@@ -69,8 +66,6 @@ public class UIController : MonoBehaviour
     }
 
     public void OnRestartButtonClick() => RestartGame();
-
-    public void OnFireButtonClick() => playerController.Fire();
 
     public void OnExitButtonClick()
     {
