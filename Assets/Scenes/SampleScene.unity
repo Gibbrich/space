@@ -464,6 +464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1381453814447508678, guid: 8f64ba72d4e9e430495390fbfa55f903,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1381453814447508666, guid: 8f64ba72d4e9e430495390fbfa55f903,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,7 +656,7 @@ PrefabInstance:
     - target: {fileID: 5773291195309023713, guid: 9cc3b5c9784b348b9ae57b9bafbaaa30,
         type: 3}
       propertyPath: ShouldSpawn
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9cc3b5c9784b348b9ae57b9bafbaaa30, type: 3}
@@ -666,26 +671,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: SpawnFrequency
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: SpawnRadiusMin
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: SpawnRadiusMax
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5023964435910661000, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5793768695194966752, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
@@ -742,37 +727,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5793768695194966753, guid: edd5a26f3f60647fc8ba5216d32ad335,
+    - target: {fileID: 4346186432900274772, guid: edd5a26f3f60647fc8ba5216d32ad335,
         type: 3}
-      propertyPath: FuelConsumption
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
-      propertyPath: SpawnAtATime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
-      propertyPath: SpawnRadius
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
-      propertyPath: AsteroidSizeMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168664694480385398, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3168664694480385398, guid: edd5a26f3f60647fc8ba5216d32ad335,
-        type: 3}
-      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1018392373, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+    - target: {fileID: 520003554, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd5a26f3f60647fc8ba5216d32ad335, type: 3}

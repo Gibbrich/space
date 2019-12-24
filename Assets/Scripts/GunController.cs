@@ -31,7 +31,7 @@ public class GunController : MonoBehaviour
             var angle = Mathf.Atan2(pivotPosition.y, pivotPosition.x) * Mathf.Rad2Deg;
             pivot.transform.rotation = Quaternion.AngleAxis(angle + GunSpriteRotationAngle, Vector3.forward);
 
-            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(GetPointerId()))
+            if (Input.GetMouseButtonDown(0) && playerController.State == State.ALIVE && !EventSystem.current.IsPointerOverGameObject(GetPointerId()))
             {  
                 Fire();
             }

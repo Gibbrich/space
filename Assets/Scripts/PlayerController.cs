@@ -1,18 +1,23 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D))]
 public class PlayerController : MonoBehaviour
 {
     public BulletController bulletPrefab;
-//    public float MaxFuelValue = 100f;
-//    public float FuelConsumption = 1;
-    
+    public SpriteRenderer ShipRenderer;
+    public SpriteRenderer GunRenderer;
+    public SpriteRenderer ExplosionRenderer;
+
+    public State State = State.ALIVE; 
     private Rigidbody2D rb;
+    private CircleCollider2D col;
     private GameController gameController;
     private AudioSource audioSource;
+    private Animator animator;
 
 //    private float currentFuelValue;
     
@@ -20,8 +25,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<CircleCollider2D>();
         gameController = FindObjectOfType<GameController>();
 //        currentFuelValue = MaxFuelValue;
+        animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = gameController.SoundsConfigure.Ship;
         audioSource.Play();
@@ -50,13 +57,36 @@ public class PlayerController : MonoBehaviour
 
     public Vector2 GetVelocity() => rb.velocity;
 
+    public void OnExplosionEnd()
+    {
+        // todo - without disabling ExplosionRenderer there will remain 
+        // smoke sprite until game over. Better to fix sprite sheet
+        ExplosionRenderer.enabled = false;
+        StartCoroutine(EndGame());
+    }
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSecondsRealtime(1.0f);
+        gameController.EndGame();
+        Destroy(gameObject);
+    }
+
 //    private void NotifyGameControllerFuelChanged() => gameController.UpdateFuel(currentFuelValue / MaxFuelValue);
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(gameObject);
+        // turn off collision with asteroids and set speed to 0
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+        col.isTrigger = true;
 
+        ShipRenderer.enabled = false;
+        GunRenderer.enabled = false;
+
+        State = State.DEAD;
+
+        animator.SetTrigger("Death");
         gameController.PlayAudio(gameController.SoundsConfigure.ShipExplosion);
-        gameController.EndGame();
     }
 }
