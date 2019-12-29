@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "933655877102",
+    "firebase_url": "https://fasteroid-26186.firebaseio.com",
+    "project_id": "fasteroid-26186",
+    "storage_bucket": "fasteroid-26186.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933655877102:android:5e399dcbfab2eb8799eaff",
+        "android_client_info": {
+          "package_name": "com.catagamagames.fasteroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933655877102-v5886vodloblkk9fmfd2sqpbgfin2am8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.catagamagames.fasteroid",
+            "certificate_hash": "60f0f308f34f9ab83c9a6ed23f5680bbbf7d969b"
+          }
+        },
+        {
+          "client_id": "933655877102-dshd25q819mor8dmc39q9dqc6rimncqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfueE4kAN3s3pClPYwfRNiu4wGzPo3lVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933655877102-dshd25q819mor8dmc39q9dqc6rimncqs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "933655877102-5mk5ilutmf1224g8srvelbnnh06ihdu4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.catagamagames.fasteroid"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
