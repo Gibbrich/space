@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Firebase.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,10 +48,12 @@ public class UIController : MonoBehaviour
     {
         if (gameController.GameState == GameState.Stop)
         {
+            FirebaseAnalytics.LogEvent(Actions.RESTART_GAME_BUTTON_CLICK);
             RestartGame();
         }
         else
         {
+            FirebaseAnalytics.LogEvent(Actions.CONTINUE_GAME_BUTTON_CLICK);
             ContinueGame();
         }
     }
@@ -69,11 +72,13 @@ public class UIController : MonoBehaviour
 
     public void OnExitButtonClick()
     {
+        FirebaseAnalytics.LogEvent(Actions.EXIT_GAME_BUTTON_CLICK);
         Application.Quit();
     }
 
     public void OnMenuButtonClick()
     {
+        FirebaseAnalytics.LogEvent(Actions.SETTINGS_BUTTON_CLICK);
         gameController.TogglePause();
     }
 
